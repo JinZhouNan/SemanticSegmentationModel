@@ -26,12 +26,12 @@ def configure():
 	flags.DEFINE_float('momentum', 0.9, 'momentum')
 	flags.DEFINE_boolean('is_training', False, 'whether to updates the running means and variances of BN during the training')
 	flags.DEFINE_string('pretrain_file', None, 'pre-trained model filename')
-	flags.DEFINE_string('data_list', '/home/zx1/data/data/Chromosome/train.txt', 'training data list filename')
+	flags.DEFINE_string('data_list', 'train.txt', 'training data list filename')
 
 	# testing / validation
 	flags.DEFINE_integer('valid_step', 7000, 'checkpoint number for testing/validation')
 	flags.DEFINE_integer('valid_num_steps', 10, '= number of testing/validation samples')
-	flags.DEFINE_string('valid_data_list', '/home/zx1/data/data/Chromosome/train.txt', 'testingvalidationdatalistfilename')
+	flags.DEFINE_string('valid_data_list', 'train.txt', 'testingvalidationdatalistfilename')
 
 	# data
 	flags.DEFINE_string('data_dir', '', 'data directory')
@@ -44,10 +44,10 @@ def configure():
 	flags.DEFINE_boolean('random_mirror', True, 'whether to perform random left-right flipping data-augmentation')
 
 	# log
-	flags.DEFINE_string('modeldir', '/home/zx1/project/.SingleCro/Deeplabv3_50/model/model', 'model directory')
+	flags.DEFINE_string('modeldir', 'model', 'model directory')
 	flags.DEFINE_string('logfile', 'log.txt', 'training log filename')
 	flags.DEFINE_string('logdir', 'log', 'training log directory')
-	flags.DEFINE_string('outimage', '/home/zx1/project/.SingleCro/Deeplabv3_50/outimage/outimage/', 'outimage directory')
+	flags.DEFINE_string('outimage', 'outimage/', 'outimage directory')
 	flags.FLAGS.__dict__['__parsed'] = False
 	return flags.FLAGS
 
